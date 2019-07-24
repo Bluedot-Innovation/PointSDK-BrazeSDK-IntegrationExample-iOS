@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-PointSDK-BrazeSDKIntegrationExample-iOS/Pods-PointSDK-BrazeSDKIntegrationExample-iOS-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Appboy-iOS-SDK/Appboy_iOS_SDK.framework
+${PODS_ROOT}/BluedotPointSDK/PointSDK/BDPointSDK.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

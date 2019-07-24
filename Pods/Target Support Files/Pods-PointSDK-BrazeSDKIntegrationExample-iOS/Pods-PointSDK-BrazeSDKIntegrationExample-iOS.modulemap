@@ -1,0 +1,6 @@
+framework module Pods_PointSDK_BrazeSDKIntegrationExample_iOS {
+  umbrella header "Pods-PointSDK-BrazeSDKIntegrationExample-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
