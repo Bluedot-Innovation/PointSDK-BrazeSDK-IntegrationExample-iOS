@@ -15,10 +15,18 @@ extension AppDelegate: BDPLocationDelegate {
         print("Zone information has been recieved")
     }
     
-    func didCheck(intoFence fence: BDFenceInfo!, inZone zoneInfo: BDZoneInfo!, atLocation location: BDLocationInfo!, willCheckOut: Bool, withCustomData customData: [AnyHashable : Any]!) {
+    func didCheck(
+        intoFence fence: BDFenceInfo!,
+        inZone zoneInfo: BDZoneInfo!,
+        atLocation location: BDLocationInfo!,
+        willCheckOut: Bool,
+        withCustomData customData: [AnyHashable : Any]!
+    ) {
         
-        print("----      You have ENTER into a zone \(zoneInfo.name!)    -----")
-
+        // Name the custom event
+        let customEventName = "bluedot_entry"
+        
+        // Map the Location and Zone attributes into a properties dictionary
         var properties = [
             "zone_id": "\(zoneInfo.id!)",
             "zone_name": "\(zoneInfo.name!)",
@@ -29,26 +37,46 @@ extension AppDelegate: BDPLocationDelegate {
             "timestamp": "\(location.timestamp!)",
         ]
         
-        // Add all customData to properties
+        // Map the Custom Data attributes into properties
         if customData != nil && !customData.isEmpty {
             customData.forEach { data in properties["\(data.key)"] = "\(data.value)"}
         }
         
-        Appboy.sharedInstance()?.logCustomEvent("bluedot_entry", withProperties: properties );
+        // Log the Custom Event in Appboy
+        Appboy.sharedInstance()?.logCustomEvent(customEventName, withProperties: properties );
         
         let message = "You have checked into fence \(fence.name!) in zone \(zoneInfo.name!)"
         let viewController = self.window?.rootViewController as! ViewController
         viewController.showAlert(title: "Check In", message: message)
     }
     
-    func didCheckOut(fromFence fence: BDFenceInfo!, inZone zoneInfo: BDZoneInfo!, on date: Date!, withDuration checkedInDuration: UInt, withCustomData customData: [AnyHashable : Any]!) {
-        print("----      You have LEFT a zone     -----")
+    func didCheckOut(
+        fromFence fence: BDFenceInfo!,
+        inZone zoneInfo: BDZoneInfo!,
+        on date: Date!,
+        withDuration checkedInDuration: UInt,
+        withCustomData customData: [AnyHashable : Any]!
+    ) {
         
-        print("zoneInfo: \(zoneInfo!)")
+        // Name the custom event
+        let customEventName = "bluedot_exit"
         
-        Appboy.sharedInstance()?.logCustomEvent("bluedot_exit", withProperties: ["zone_name": "\(zoneInfo.name!)"]);
+        // Map the Zone attributes into a properties dictionary
+        var properties = [
+            "zone_id": "\(zoneInfo.id!)",
+            "zone_name": "\(zoneInfo.name!)",
+            "timestamp": "\(date!)",
+            "checkedInDuration": "\(checkedInDuration)"
+        ]
+        
+        // Map the Custom Data attributes into properties
+        if customData != nil && !customData.isEmpty {
+            customData.forEach { data in properties["\(data.key)"] = "\(data.value)"}
+        }
+        
+        Appboy.sharedInstance()?.logCustomEvent(customEventName, withProperties: properties);
       
-        let message = "You have left out fence \(fence.name!) in zone \(zoneInfo.name!)"
+        let message = "You have left fence \(fence.name!) in zone \(zoneInfo.name!)"
         let viewController = self.window?.rootViewController as! ViewController
         viewController.showAlert(title: "Check Out", message: message)
     }
