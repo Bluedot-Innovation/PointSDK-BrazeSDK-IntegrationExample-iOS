@@ -146,9 +146,6 @@ func didCheckOut(
     withDuration checkedInDuration: UInt,
     withCustomData customData: [AnyHashable : Any]!
 ) {
-     // Name the custom event 
-    let customEventName = "bluedot_entry"
-
      // Name the custom event
     let customEventName = "bluedot_exit"
     
