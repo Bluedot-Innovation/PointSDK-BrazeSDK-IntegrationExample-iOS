@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 import BDPointSDK
 import Appboy_iOS_SDK
 
@@ -17,8 +18,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        // Initiates connection with Bluedot
         BDLocationManager.instance()?.sessionDelegate = self
+        
     }
     
     
@@ -41,6 +44,8 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+
 
 }
 

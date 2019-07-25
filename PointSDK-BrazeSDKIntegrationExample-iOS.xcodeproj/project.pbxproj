@@ -38,6 +38,7 @@
 		6504064C22E591E200A5492F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6504064E22E591EF00A5492F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65C18D0322E6CD6300119F5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65C18D0522E82A4200119F5C /* PointSDK-BrazeSDKIntegrationExample-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PointSDK-BrazeSDKIntegrationExample-iOS.entitlements"; sourceTree = "<group>"; };
 		65DD437E22E690DE00FB078D /* AppDelegate+LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+LocationDelegate.swift"; sourceTree = "<group>"; };
 		74296D198F6A641F953F25A2 /* Pods_PointSDK_BrazeSDKIntegrationExample_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PointSDK_BrazeSDKIntegrationExample_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,6 +96,7 @@
 		6504063122E5864400A5492F /* PointSDK-BrazeSDKIntegrationExample-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				65C18D0522E82A4200119F5C /* PointSDK-BrazeSDKIntegrationExample-iOS.entitlements */,
 				6504063222E5864400A5492F /* AppDelegate.swift */,
 				6504063422E5864400A5492F /* ViewController.swift */,
 				6504063622E5864400A5492F /* Main.storyboard */,
@@ -149,6 +151,11 @@
 				TargetAttributes = {
 					6504062E22E5864400A5492F = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -321,6 +328,7 @@
 		};
 		6504064022E5864600A5492F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26A0292889650816ABEFC2CD /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -380,6 +388,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "PointSDK-BrazeSDKIntegrationExample-iOS/PointSDK-BrazeSDKIntegrationExample-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				INFOPLIST_FILE = "PointSDK-BrazeSDKIntegrationExample-iOS/Info.plist";
@@ -400,6 +409,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "PointSDK-BrazeSDKIntegrationExample-iOS/PointSDK-BrazeSDKIntegrationExample-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				INFOPLIST_FILE = "PointSDK-BrazeSDKIntegrationExample-iOS/Info.plist";

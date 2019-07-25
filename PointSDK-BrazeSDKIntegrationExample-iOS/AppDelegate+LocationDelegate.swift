@@ -44,6 +44,8 @@ extension AppDelegate: BDPLocationDelegate {
     func didCheckOut(fromFence fence: BDFenceInfo!, inZone zoneInfo: BDZoneInfo!, on date: Date!, withDuration checkedInDuration: UInt, withCustomData customData: [AnyHashable : Any]!) {
         print("----      You have LEFT a zone     -----")
         
+        print("zoneInfo: \(zoneInfo!)")
+        
         Appboy.sharedInstance()?.logCustomEvent("bluedot_exit", withProperties: ["zone_name": "\(zoneInfo.name!)"]);
       
         let message = "You have left out fence \(fence.name!) in zone \(zoneInfo.name!)"
