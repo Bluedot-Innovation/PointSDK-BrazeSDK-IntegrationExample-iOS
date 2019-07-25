@@ -29,9 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         // Initiates connection with Braze
         Appboy.start(withApiKey: brazeApiKey, in: application, withLaunchOptions: launchOptions)
+        
+        // Assign UserID to track the user in Braze platform
         Appboy.sharedInstance()?.changeUser("bluedot_sdk_and_brazer_sdk_integration_iOS")
         
-     
+        // Register for Push Notifications
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         var options: UNAuthorizationOptions = [.alert, .sound, .badge]
@@ -43,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         UIApplication.shared.registerForRemoteNotifications()
         
-   
         return true
     }
     
@@ -52,6 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         _ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
     ) {
+        
+        // Register Push Token with Braze
         let deviceTokenString = String(format: "%@", deviceToken as CVarArg)
         Appboy.sharedInstance()?.registerPushToken(deviceTokenString)
     }
@@ -69,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         didReceiveRemoteNotification userInfo: [AnyHashable: Any],
         fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
     ) {
-        print("Did Receive Remote Notification. UserInfo => \(userInfo)")
+        // Enable Push Notifications Handling
         Appboy.sharedInstance()?.register(application,
                                           didReceiveRemoteNotification: userInfo,
                                           fetchCompletionHandler: completionHandler)
