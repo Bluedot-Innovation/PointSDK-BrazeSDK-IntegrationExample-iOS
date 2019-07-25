@@ -45,9 +45,9 @@ extension AppDelegate: BDPLocationDelegate {
         // Log the Custom Event in Appboy
         Appboy.sharedInstance()?.logCustomEvent(customEventName, withProperties: properties );
         
-        let message = "You have checked into fence \(fence.name!) in zone \(zoneInfo.name!)"
-        let viewController = self.window?.rootViewController as! ViewController
-        viewController.showAlert(title: "Check In", message: message)
+//        let message = "You have checked into fence \(fence.name!) in zone \(zoneInfo.name!)"
+//        let viewController = self.window?.rootViewController as! ViewController
+//        viewController.showAlert(title: "Check In", message: message)
     }
     
     func didCheckOut(
@@ -76,8 +76,8 @@ extension AppDelegate: BDPLocationDelegate {
         
         Appboy.sharedInstance()?.logCustomEvent(customEventName, withProperties: properties);
       
-        let message = "You have left fence \(fence.name!) in zone \(zoneInfo.name!)"
-        let viewController = self.window?.rootViewController as! ViewController
-        viewController.showAlert(title: "Check Out", message: message)
+//        let message = "You have left fence \(fence.name!) in zone \(zoneInfo.name!)"
+//        let viewController = self.window?.rootViewController as! ViewController
+//        viewController.showAlert(title: "Check Out", message: message)
     }
 }
