@@ -44,9 +44,6 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-
-
 }
 
 extension ViewController: BDPointDelegate {
