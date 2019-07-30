@@ -11,7 +11,7 @@ import UserNotifications
 import BDPointSDK
 import Appboy_iOS_SDK
 
-let bluedotApiKey = "647bff30-c8c1-11e6-b298-b8ca3a6b879d"
+let bluedotApiKey = "__your_bluedot_api_key__"
 
 class ViewController: UIViewController {
     @IBOutlet weak var authenticateButton: UIButton!

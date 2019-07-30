@@ -15,7 +15,7 @@ import Appboy_iOS_SDK
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-    let brazeApiKey = "d85d9a4d-2434-44ca-aa0d-259a6b8f7d72"
+    let brazeApiKey = "__your_braze_api_key__"
 
 
     func application(
