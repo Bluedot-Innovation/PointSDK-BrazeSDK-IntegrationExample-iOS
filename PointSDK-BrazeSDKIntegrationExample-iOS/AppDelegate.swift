@@ -55,8 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     ) {
         
         // Register Push Token with Braze
-        let deviceTokenString = String(format: "%@", deviceToken as CVarArg)
-        Appboy.sharedInstance()?.registerPushToken(deviceTokenString)
+        Appboy.sharedInstance()?.registerDeviceToken(deviceToken)
     }
     
     func application(
