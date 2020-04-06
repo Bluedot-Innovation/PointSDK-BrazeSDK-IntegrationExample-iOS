@@ -5,6 +5,15 @@ A sample project used to test the integration between Braze Appboy SDK and Blued
 
 This project depends on `BluedotPointSDK` and `Appboy-iOS-SDK`. Both dependencies ban be managed by [CocoaPods](https://cocoapods.org/). Please refer to the `Podfile` in the repository.
 
+###Pre-requisite
+Install git-lfs and lfs using the below commands:
+
+```
+brew install git-lfs
+
+git lfs install
+```
+
 ### Implement `BluedotPointSDK`
 
 1. import `BDPointSDK` to your class:
