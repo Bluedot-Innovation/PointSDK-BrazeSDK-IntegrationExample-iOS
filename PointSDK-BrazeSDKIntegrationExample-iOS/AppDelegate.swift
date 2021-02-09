@@ -15,7 +15,7 @@ import Appboy_iOS_SDK
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-    let brazeApiKey = "__your_braze_api_key__"
+    let brazeApiKey = "YourBrazeAPIKey"
 
 
     func application(
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     ) -> Bool {
         
         // Initiates BDLocationManager
-        BDLocationManager.instance()?.locationDelegate = self
+        BDLocationManager.instance()?.geoTriggeringEventDelegate = self
         
         
         // Initiates connection with Braze
@@ -33,17 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Assign UserID to track the user in Braze platform
         Appboy.sharedInstance()?.changeUser("bluedot_sdk_and_brazer_sdk_integration_iOS")
         
-        // Register for Push Notifications
-        let center = UNUserNotificationCenter.current()
-        center.delegate = self
-        var options: UNAuthorizationOptions = [.alert, .sound, .badge]
-        if #available(iOS 12.0, *) {
-            options = UNAuthorizationOptions(rawValue: options.rawValue | UNAuthorizationOptions.provisional.rawValue)
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(granted, error) in
+            
+            if granted {
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            } else {
+                print("Notification access denied. \(String(describing: error?.localizedDescription))")
+            }
+            
         }
-        center.requestAuthorization(options: options) { (granted, error) in
-            Appboy.sharedInstance()?.pushAuthorization(fromUserNotificationCenter: granted)
-        }
-        UIApplication.shared.registerForRemoteNotifications()
         
         return true
     }

@@ -1,25 +1,25 @@
 PODS:
-  - Appboy-iOS-SDK (3.21.3):
-    - Appboy-iOS-SDK/UI (= 3.21.3)
-  - Appboy-iOS-SDK/ContentCards (3.21.3):
+  - Appboy-iOS-SDK (3.32.0):
+    - Appboy-iOS-SDK/UI (= 3.32.0)
+  - Appboy-iOS-SDK/ContentCards (3.32.0):
     - Appboy-iOS-SDK/Core
-    - SDWebImage (~> 5.0)
-  - Appboy-iOS-SDK/Core (3.21.3)
-  - Appboy-iOS-SDK/InAppMessage (3.21.3):
+    - SDWebImage (< 6, >= 5.8.2)
+  - Appboy-iOS-SDK/Core (3.32.0)
+  - Appboy-iOS-SDK/InAppMessage (3.32.0):
     - Appboy-iOS-SDK/Core
-    - SDWebImage (~> 5.0)
-  - Appboy-iOS-SDK/NewsFeed (3.21.3):
+    - SDWebImage (< 6, >= 5.8.2)
+  - Appboy-iOS-SDK/NewsFeed (3.32.0):
     - Appboy-iOS-SDK/Core
-    - SDWebImage (~> 5.0)
-  - Appboy-iOS-SDK/UI (3.21.3):
+    - SDWebImage (< 6, >= 5.8.2)
+  - Appboy-iOS-SDK/UI (3.32.0):
     - Appboy-iOS-SDK/ContentCards
     - Appboy-iOS-SDK/Core
     - Appboy-iOS-SDK/InAppMessage
     - Appboy-iOS-SDK/NewsFeed
-  - BluedotPointSDK (15.2.0)
-  - SDWebImage (5.6.1):
-    - SDWebImage/Core (= 5.6.1)
-  - SDWebImage/Core (5.6.1)
+  - BluedotPointSDK (15.4.1)
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
 
 DEPENDENCIES:
   - Appboy-iOS-SDK
@@ -32,10 +32,10 @@ SPEC REPOS:
     - SDWebImage
 
 SPEC CHECKSUMS:
-  Appboy-iOS-SDK: 2600f129c311e14217a2b0e75264bad88214b97c
-  BluedotPointSDK: 1004bd071101dfe72ead61ce89612755e974512a
-  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
+  Appboy-iOS-SDK: 6d3016581cb5306e26826ec7333f0c5ae59e2a2f
+  BluedotPointSDK: e6afdbe1c4a01d867d6533e1a84c9d03f213cba2
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
 
 PODFILE CHECKSUM: 0207676b08c1e7f185b21c3c77aaddda3dd16093
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1
