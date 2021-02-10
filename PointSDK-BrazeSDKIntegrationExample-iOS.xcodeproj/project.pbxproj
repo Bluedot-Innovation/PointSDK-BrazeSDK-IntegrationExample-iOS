@@ -19,7 +19,7 @@
 		6504064D22E591E200A5492F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6504064C22E591E200A5492F /* CoreGraphics.framework */; };
 		6504064F22E591EF00A5492F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6504064E22E591EF00A5492F /* UIKit.framework */; };
 		65C18D0422E6CD6300119F5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65C18D0322E6CD6300119F5C /* Assets.xcassets */; };
-		65DD437F22E690DE00FB078D /* AppDelegate+LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DD437E22E690DE00FB078D /* AppDelegate+LocationDelegate.swift */; };
+		65DD437F22E690DE00FB078D /* AppDelegate+GeoTriggeringEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DD437E22E690DE00FB078D /* AppDelegate+GeoTriggeringEventDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		6504064E22E591EF00A5492F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65C18D0322E6CD6300119F5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65C18D0522E82A4200119F5C /* PointSDK-BrazeSDKIntegrationExample-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PointSDK-BrazeSDKIntegrationExample-iOS.entitlements"; sourceTree = "<group>"; };
-		65DD437E22E690DE00FB078D /* AppDelegate+LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+LocationDelegate.swift"; sourceTree = "<group>"; };
+		65DD437E22E690DE00FB078D /* AppDelegate+GeoTriggeringEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+GeoTriggeringEventDelegate.swift"; sourceTree = "<group>"; };
 		74296D198F6A641F953F25A2 /* Pods_PointSDK_BrazeSDKIntegrationExample_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PointSDK_BrazeSDKIntegrationExample_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,7 @@
 				65C18D0322E6CD6300119F5C /* Assets.xcassets */,
 				6504063B22E5864600A5492F /* LaunchScreen.storyboard */,
 				6504063E22E5864600A5492F /* Info.plist */,
-				65DD437E22E690DE00FB078D /* AppDelegate+LocationDelegate.swift */,
+				65DD437E22E690DE00FB078D /* AppDelegate+GeoTriggeringEventDelegate.swift */,
 			);
 			path = "PointSDK-BrazeSDKIntegrationExample-iOS";
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6504063522E5864400A5492F /* ViewController.swift in Sources */,
-				65DD437F22E690DE00FB078D /* AppDelegate+LocationDelegate.swift in Sources */,
+				65DD437F22E690DE00FB078D /* AppDelegate+GeoTriggeringEventDelegate.swift in Sources */,
 				6504063322E5864400A5492F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
