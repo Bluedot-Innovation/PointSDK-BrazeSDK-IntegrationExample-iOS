@@ -1,41 +1,16 @@
 PODS:
-  - Appboy-iOS-SDK (3.32.0):
-    - Appboy-iOS-SDK/UI (= 3.32.0)
-  - Appboy-iOS-SDK/ContentCards (3.32.0):
-    - Appboy-iOS-SDK/Core
-    - SDWebImage (< 6, >= 5.8.2)
-  - Appboy-iOS-SDK/Core (3.32.0)
-  - Appboy-iOS-SDK/InAppMessage (3.32.0):
-    - Appboy-iOS-SDK/Core
-    - SDWebImage (< 6, >= 5.8.2)
-  - Appboy-iOS-SDK/NewsFeed (3.32.0):
-    - Appboy-iOS-SDK/Core
-    - SDWebImage (< 6, >= 5.8.2)
-  - Appboy-iOS-SDK/UI (3.32.0):
-    - Appboy-iOS-SDK/ContentCards
-    - Appboy-iOS-SDK/Core
-    - Appboy-iOS-SDK/InAppMessage
-    - Appboy-iOS-SDK/NewsFeed
-  - BluedotPointSDK (15.4.1)
-  - SDWebImage (5.10.4):
-    - SDWebImage/Core (= 5.10.4)
-  - SDWebImage/Core (5.10.4)
+  - BluedotPointSDK (15.6.8)
 
 DEPENDENCIES:
-  - Appboy-iOS-SDK
-  - BluedotPointSDK
+  - BluedotPointSDK (= 15.6.8)
 
 SPEC REPOS:
   trunk:
-    - Appboy-iOS-SDK
     - BluedotPointSDK
-    - SDWebImage
 
 SPEC CHECKSUMS:
-  Appboy-iOS-SDK: 6d3016581cb5306e26826ec7333f0c5ae59e2a2f
-  BluedotPointSDK: e6afdbe1c4a01d867d6533e1a84c9d03f213cba2
-  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
+  BluedotPointSDK: b0c584fa864c5b9b2dbbf8f9ea99a9c787a94a10
 
-PODFILE CHECKSUM: 0207676b08c1e7f185b21c3c77aaddda3dd16093
+PODFILE CHECKSUM: 1a0aa2107471d20af7f3dd175eded6b630e174f2
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.14.2

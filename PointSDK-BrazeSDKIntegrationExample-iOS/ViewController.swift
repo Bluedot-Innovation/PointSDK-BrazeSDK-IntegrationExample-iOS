@@ -9,9 +9,9 @@
 import UIKit
 import UserNotifications
 import BDPointSDK
-import Appboy_iOS_SDK
+import BrazeKitCompat
 
-let projectId = "YourProjectId"
+let projectId = "YourProjectId" // Bluedot Project Id
 
 class ViewController: UIViewController {
     @IBOutlet weak var authenticateButton: UIButton!
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }

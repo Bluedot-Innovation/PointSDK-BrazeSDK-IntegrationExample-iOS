@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,11 +20,16 @@
 		6504064F22E591EF00A5492F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6504064E22E591EF00A5492F /* UIKit.framework */; };
 		65C18D0422E6CD6300119F5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65C18D0322E6CD6300119F5C /* Assets.xcassets */; };
 		65DD437F22E690DE00FB078D /* AppDelegate+GeoTriggeringEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DD437E22E690DE00FB078D /* AppDelegate+GeoTriggeringEventDelegate.swift */; };
+		E12318B52B904EFD002214B0 /* BrazeKit in Frameworks */ = {isa = PBXBuildFile; productRef = E12318B42B904EFD002214B0 /* BrazeKit */; };
+		E12318B72B904EFD002214B0 /* BrazeKitCompat in Frameworks */ = {isa = PBXBuildFile; productRef = E12318B62B904EFD002214B0 /* BrazeKitCompat */; };
+		E12318B92B904EFD002214B0 /* BrazeLocation in Frameworks */ = {isa = PBXBuildFile; productRef = E12318B82B904EFD002214B0 /* BrazeLocation */; };
+		E12318BB2B904EFD002214B0 /* BrazeNotificationService in Frameworks */ = {isa = PBXBuildFile; productRef = E12318BA2B904EFD002214B0 /* BrazeNotificationService */; };
+		E12318BD2B904EFD002214B0 /* BrazePushStory in Frameworks */ = {isa = PBXBuildFile; productRef = E12318BC2B904EFD002214B0 /* BrazePushStory */; };
+		E12318BF2B904EFD002214B0 /* BrazeUI in Frameworks */ = {isa = PBXBuildFile; productRef = E12318BE2B904EFD002214B0 /* BrazeUI */; };
+		E12318C12B904EFD002214B0 /* BrazeUICompat in Frameworks */ = {isa = PBXBuildFile; productRef = E12318C02B904EFD002214B0 /* BrazeUICompat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26A0292889650816ABEFC2CD /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig"; path = "Target Support Files/Pods-PointSDK-BrazeSDKIntegrationExample-iOS/Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		48DE58DB21B34256B8A2190D /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PointSDK-BrazeSDKIntegrationExample-iOS.debug.xcconfig"; path = "Target Support Files/Pods-PointSDK-BrazeSDKIntegrationExample-iOS/Pods-PointSDK-BrazeSDKIntegrationExample-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6504062F22E5864400A5492F /* PointSDK-BrazeSDKIntegrationExample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PointSDK-BrazeSDKIntegrationExample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6504063222E5864400A5492F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6504063422E5864400A5492F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +46,8 @@
 		65C18D0522E82A4200119F5C /* PointSDK-BrazeSDKIntegrationExample-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PointSDK-BrazeSDKIntegrationExample-iOS.entitlements"; sourceTree = "<group>"; };
 		65DD437E22E690DE00FB078D /* AppDelegate+GeoTriggeringEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+GeoTriggeringEventDelegate.swift"; sourceTree = "<group>"; };
 		74296D198F6A641F953F25A2 /* Pods_PointSDK_BrazeSDKIntegrationExample_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PointSDK_BrazeSDKIntegrationExample_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA5667D36544800A1B7AC8A4 /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig"; path = "Target Support Files/Pods-PointSDK-BrazeSDKIntegrationExample-iOS/Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		F23A6D132A0DA0AE3C07F428 /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PointSDK-BrazeSDKIntegrationExample-iOS.debug.xcconfig"; path = "Target Support Files/Pods-PointSDK-BrazeSDKIntegrationExample-iOS/Pods-PointSDK-BrazeSDKIntegrationExample-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,10 +55,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12318B72B904EFD002214B0 /* BrazeKitCompat in Frameworks */,
 				6504064F22E591EF00A5492F /* UIKit.framework in Frameworks */,
 				6504064D22E591E200A5492F /* CoreGraphics.framework in Frameworks */,
+				E12318BB2B904EFD002214B0 /* BrazeNotificationService in Frameworks */,
 				6504064B22E591D700A5492F /* MapKit.framework in Frameworks */,
 				6504064922E591C900A5492F /* SystemConfiguration.framework in Frameworks */,
+				E12318B52B904EFD002214B0 /* BrazeKit in Frameworks */,
+				E12318C12B904EFD002214B0 /* BrazeUICompat in Frameworks */,
+				E12318BD2B904EFD002214B0 /* BrazePushStory in Frameworks */,
+				E12318B92B904EFD002214B0 /* BrazeLocation in Frameworks */,
+				E12318BF2B904EFD002214B0 /* BrazeUI in Frameworks */,
 				6504064722E591B400A5492F /* CoreMotion.framework in Frameworks */,
 				6504064522E591A700A5492F /* CoreLocation.framework in Frameworks */,
 				1E16C3C6963F3F9452D972FA /* Pods_PointSDK_BrazeSDKIntegrationExample_iOS.framework in Frameworks */,
@@ -61,6 +75,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32EB0E0B7F06F32280CEB55A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F23A6D132A0DA0AE3C07F428 /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.debug.xcconfig */,
+				CA5667D36544800A1B7AC8A4 /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		377512F5995E4AF6830E6499 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,8 +104,8 @@
 			children = (
 				6504063122E5864400A5492F /* PointSDK-BrazeSDKIntegrationExample-iOS */,
 				6504063022E5864400A5492F /* Products */,
-				662B060F4236E20AF6E36A72 /* Pods */,
 				377512F5995E4AF6830E6499 /* Frameworks */,
+				32EB0E0B7F06F32280CEB55A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,15 +132,6 @@
 			path = "PointSDK-BrazeSDKIntegrationExample-iOS";
 			sourceTree = "<group>";
 		};
-		662B060F4236E20AF6E36A72 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				48DE58DB21B34256B8A2190D /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.debug.xcconfig */,
-				26A0292889650816ABEFC2CD /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +150,15 @@
 			dependencies = (
 			);
 			name = "PointSDK-BrazeSDKIntegrationExample-iOS";
+			packageProductDependencies = (
+				E12318B42B904EFD002214B0 /* BrazeKit */,
+				E12318B62B904EFD002214B0 /* BrazeKitCompat */,
+				E12318B82B904EFD002214B0 /* BrazeLocation */,
+				E12318BA2B904EFD002214B0 /* BrazeNotificationService */,
+				E12318BC2B904EFD002214B0 /* BrazePushStory */,
+				E12318BE2B904EFD002214B0 /* BrazeUI */,
+				E12318C02B904EFD002214B0 /* BrazeUICompat */,
+			);
 			productName = "PointSDK-BrazeSDKIntegrationExample-iOS";
 			productReference = 6504062F22E5864400A5492F /* PointSDK-BrazeSDKIntegrationExample-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +192,9 @@
 				Base,
 			);
 			mainGroup = 6504062622E5864400A5492F;
+			packageReferences = (
+				E12318B32B904EFD002214B0 /* XCRemoteSwiftPackageReference "braze-swift-sdk" */,
+			);
 			productRefGroup = 6504063022E5864400A5492F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -316,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -328,7 +355,6 @@
 		};
 		6504064022E5864600A5492F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26A0292889650816ABEFC2CD /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -372,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -384,7 +410,7 @@
 		};
 		6504064222E5864600A5492F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48DE58DB21B34256B8A2190D /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.debug.xcconfig */;
+			baseConfigurationReference = F23A6D132A0DA0AE3C07F428 /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -392,6 +418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				INFOPLIST_FILE = "PointSDK-BrazeSDKIntegrationExample-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,7 +432,7 @@
 		};
 		6504064322E5864600A5492F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26A0292889650816ABEFC2CD /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig */;
+			baseConfigurationReference = CA5667D36544800A1B7AC8A4 /* Pods-PointSDK-BrazeSDKIntegrationExample-iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -413,6 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				INFOPLIST_FILE = "PointSDK-BrazeSDKIntegrationExample-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,6 +474,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E12318B32B904EFD002214B0 /* XCRemoteSwiftPackageReference "braze-swift-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/braze-inc/braze-swift-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E12318B42B904EFD002214B0 /* BrazeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E12318B32B904EFD002214B0 /* XCRemoteSwiftPackageReference "braze-swift-sdk" */;
+			productName = BrazeKit;
+		};
+		E12318B62B904EFD002214B0 /* BrazeKitCompat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E12318B32B904EFD002214B0 /* XCRemoteSwiftPackageReference "braze-swift-sdk" */;
+			productName = BrazeKitCompat;
+		};
+		E12318B82B904EFD002214B0 /* BrazeLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E12318B32B904EFD002214B0 /* XCRemoteSwiftPackageReference "braze-swift-sdk" */;
+			productName = BrazeLocation;
+		};
+		E12318BA2B904EFD002214B0 /* BrazeNotificationService */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E12318B32B904EFD002214B0 /* XCRemoteSwiftPackageReference "braze-swift-sdk" */;
+			productName = BrazeNotificationService;
+		};
+		E12318BC2B904EFD002214B0 /* BrazePushStory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E12318B32B904EFD002214B0 /* XCRemoteSwiftPackageReference "braze-swift-sdk" */;
+			productName = BrazePushStory;
+		};
+		E12318BE2B904EFD002214B0 /* BrazeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E12318B32B904EFD002214B0 /* XCRemoteSwiftPackageReference "braze-swift-sdk" */;
+			productName = BrazeUI;
+		};
+		E12318C02B904EFD002214B0 /* BrazeUICompat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E12318B32B904EFD002214B0 /* XCRemoteSwiftPackageReference "braze-swift-sdk" */;
+			productName = BrazeUICompat;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6504062722E5864400A5492F /* Project object */;
 }
