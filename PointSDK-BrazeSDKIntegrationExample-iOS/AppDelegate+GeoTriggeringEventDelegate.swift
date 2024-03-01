@@ -8,7 +8,7 @@
 
 import Foundation
 import BDPointSDK
-import Appboy_iOS_SDK
+import BrazeKitCompat
 
 extension AppDelegate: BDPGeoTriggeringEventDelegate {
     
@@ -40,7 +40,7 @@ extension AppDelegate: BDPGeoTriggeringEventDelegate {
         }
         
         // Log the Custom Event in Appboy
-        Appboy.sharedInstance()?.logCustomEvent(customEventName, withProperties: properties );
+        AppDelegate.braze?.logCustomEvent(name:customEventName, properties: properties)
     }
     
     func didExitZone(_ exitEvent: BDZoneExitEvent) {
@@ -63,6 +63,6 @@ extension AppDelegate: BDPGeoTriggeringEventDelegate {
             customData.forEach { data in properties["\(data.key)"] = "\(data.value)"}
         }
         
-        Appboy.sharedInstance()?.logCustomEvent(customEventName, withProperties: properties);
+        AppDelegate.braze?.logCustomEvent(name:customEventName, properties:properties)
     }
 }
