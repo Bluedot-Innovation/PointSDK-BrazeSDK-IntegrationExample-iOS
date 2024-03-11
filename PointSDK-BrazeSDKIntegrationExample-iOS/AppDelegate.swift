@@ -9,14 +9,14 @@
 import UIKit
 import UserNotifications
 import BDPointSDK
-import Appboy_iOS_SDK
+import BrazeKitCompat
+import BrazeUICompat
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-    let brazeApiKey = "YourBrazeAPIKey"
-
+    static var braze: Braze? = nil
 
     func application(
         _ application: UIApplication,
@@ -26,28 +26,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Initiates BDLocationManager
         BDLocationManager.instance()?.geoTriggeringEventDelegate = self
         
+        let configuration = Braze.Configuration(
+            apiKey: "YOUR-APP-IDENTIFIER-API-KEY", // Braze Portal -> Manage Settings -> Settings Tab -> Your App -> API Key
+            endpoint: "YOUR-BRAZE-ENDPOINT" // Braze Portal -> Manage Settings -> Settings Tab -> Your App -> SDK Endpoint
+        )
+        configuration.push.automation = true
         
-        // Initiates connection with Braze
-        Appboy.start(withApiKey: brazeApiKey, in: application, withLaunchOptions: launchOptions)
+        let braze = Braze(configuration: configuration)
         
         // Assign UserID to track the user in Braze platform
-        Appboy.sharedInstance()?.changeUser("bluedot_sdk_and_brazer_sdk_integration_iOS")
+        braze.changeUser(userId: "bluedot_sdk_and_brazer_sdk_integration_iOS")
+        AppDelegate.braze = braze
+                
+        let center = UNUserNotificationCenter.current()
+        center.setNotificationCategories(Braze.Notifications.categories)
+        center.delegate = self
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(granted, error) in
-            
-            if granted {
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-            } else {
-                print("Notification access denied. \(String(describing: error?.localizedDescription))")
-            }
-            
+        var options: UNAuthorizationOptions = [.alert, .sound]
+        if #available(iOS 12.0, *) {
+          options = UNAuthorizationOptions(rawValue: options.rawValue | UNAuthorizationOptions.provisional.rawValue)
         }
+        center.requestAuthorization(options: options) { granted, error in
+          print("Notification authorization, granted: \(granted), error: \(String(describing: error))")
+        }
+
+        UIApplication.shared.registerForRemoteNotifications()
         
         return true
     }
-    
     
     func application(
         _ application: UIApplication,
@@ -55,16 +61,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     ) {
         
         // Register Push Token with Braze
-        Appboy.sharedInstance()?.registerDeviceToken(deviceToken)
+        AppDelegate.braze?.notifications.register(deviceToken: deviceToken)
     }
     
     func application(
         _ application: UIApplication,
         didFailToRegisterForRemoteNotificationsWithError error: Error
     ) {
-        print("Failed to regster: \(error)")
+        print("Failed to register: \(error)")
     }
-    
     
     func application(
         _ application: UIApplication,
@@ -72,10 +77,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
     ) {
         // Enable Push Notifications Handling
-        Appboy.sharedInstance()?.register(application,
-                                          didReceiveRemoteNotification: userInfo,
-                                          fetchCompletionHandler: completionHandler)
+        if let braze = AppDelegate.braze, braze.notifications.handleBackgroundNotification(
+          userInfo: userInfo,
+          fetchCompletionHandler: completionHandler
+        ) {
+          return
+        }
+        completionHandler(.noData)
     }
+    
+// MARK: - UNUserNotificationCenterDelegate callbacks
     
     // Background notification
     func userNotificationCenter(
@@ -84,11 +95,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         withCompletionHandler completionHandler: @escaping () -> Void
         ) {
         
-        Appboy.sharedInstance()?.userNotificationCenter(center,
-                                                        didReceive: response,
-                                                        withCompletionHandler: completionHandler)
+            if let braze = AppDelegate.braze, braze.notifications.handleUserNotification(
+                response: response, withCompletionHandler: completionHandler
+            ) {
+              return
+            }
+            completionHandler()
     }
-    
     
     // Allow foreground notifications
     func userNotificationCenter(
@@ -97,7 +110,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
         ) {
         
-        completionHandler([.alert, .badge, .sound])
+        if #available(iOS 14.0, *) {
+            completionHandler([.list, .banner])
+          } else {
+            completionHandler([.alert])
+          }
     }
 }
-
