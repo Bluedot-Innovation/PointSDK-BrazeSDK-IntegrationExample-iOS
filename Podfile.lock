@@ -1,16 +1,16 @@
 PODS:
-  - BluedotPointSDK (15.6.8)
+  - BluedotPointSDK (16.0.0-rc4)
 
 DEPENDENCIES:
-  - BluedotPointSDK (= 15.6.8)
+  - BluedotPointSDK (= 16.0.0-rc4)
 
 SPEC REPOS:
   trunk:
     - BluedotPointSDK
 
 SPEC CHECKSUMS:
-  BluedotPointSDK: b0c584fa864c5b9b2dbbf8f9ea99a9c787a94a10
+  BluedotPointSDK: 310805b77936c51166f42f9f8d7ff1336a90f8ac
 
-PODFILE CHECKSUM: 1a0aa2107471d20af7f3dd175eded6b630e174f2
+PODFILE CHECKSUM: 37c4919ea09d93f6ff21bdf323e7000d6187c328
 
 COCOAPODS: 1.14.2

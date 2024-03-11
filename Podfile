@@ -6,6 +6,6 @@ target 'PointSDK-BrazeSDKIntegrationExample-iOS' do
   use_frameworks!
 
   # Pods for PointSDK-BrazeSDKIntegrationExample-iOS
-  pod 'BluedotPointSDK', "15.6.8"
+  pod 'BluedotPointSDK', "16.0.0-rc4"
 
 end
