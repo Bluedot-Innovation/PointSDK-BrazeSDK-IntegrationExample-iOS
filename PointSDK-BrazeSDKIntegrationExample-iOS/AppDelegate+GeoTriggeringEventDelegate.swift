@@ -41,7 +41,7 @@ extension AppDelegate: BDPGeoTriggeringEventDelegate {
         }
         
         // Log the Custom Event in Appboy
-        AppDelegate.braze?.logCustomEvent(name:customEventName, properties: properties)
+        AppDelegate.braze?.logCustomEvent(name: customEventName, properties: properties)
     }
     
     func didExitZone(_ triggerEvent: GeoTriggerEvent) {
@@ -65,6 +65,6 @@ extension AppDelegate: BDPGeoTriggeringEventDelegate {
             customData.forEach { data in properties["\(data.key)"] = "\(data.value)"}
         }
         
-        AppDelegate.braze?.logCustomEvent(name:customEventName, properties:properties)
+        AppDelegate.braze?.logCustomEvent(name: customEventName, properties: properties)
     }
 }
