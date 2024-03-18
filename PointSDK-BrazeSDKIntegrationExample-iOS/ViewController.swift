@@ -9,9 +9,9 @@
 import UIKit
 import UserNotifications
 import BDPointSDK
-import BrazeKitCompat
+import BrazeKit
 
-let projectId = "YourProjectId" // Bluedot Project Id
+let projectId = "BLUEDOT-PROJECT-ID" // Should be taken from Bluedot Project Canvas
 
 class ViewController: UIViewController {
     @IBOutlet weak var authenticateButton: UIButton!

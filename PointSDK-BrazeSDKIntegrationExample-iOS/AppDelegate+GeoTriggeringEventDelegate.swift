@@ -8,7 +8,7 @@
 
 import Foundation
 import BDPointSDK
-import BrazeKitCompat
+import BrazeKit
 
 extension AppDelegate: BDPGeoTriggeringEventDelegate {
     

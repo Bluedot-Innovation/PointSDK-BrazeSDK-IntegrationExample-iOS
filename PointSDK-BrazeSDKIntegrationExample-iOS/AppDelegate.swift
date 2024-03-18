@@ -9,8 +9,7 @@
 import UIKit
 import UserNotifications
 import BDPointSDK
-import BrazeKitCompat
-import BrazeUICompat
+import BrazeKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
