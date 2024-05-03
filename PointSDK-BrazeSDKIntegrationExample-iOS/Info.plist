@@ -7,14 +7,6 @@
 		<key>Endpoint</key>
 		<string>sdk.iad-03.braze.com</string>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your location is used by the app to get you deals closer to you while in use</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Your location is used by the app to get you deals closer to you while in use or in the background</string>
-	<key>NSLocationUsageDescription</key>
-	<string>Your location is used by the app to get you deals closer to you while in the background</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Your location is used by the app to get you deals closer to you while in the background</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -33,12 +25,20 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your location is used by the app to get you deals closer to you while in use or in the background</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is used by the app to get you deals closer to you while in the background</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Your location is used by the app to get you deals closer to you while in the background</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is used by the app to get you deals closer to you while in use</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
 	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
