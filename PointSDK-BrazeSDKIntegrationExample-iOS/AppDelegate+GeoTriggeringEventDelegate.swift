@@ -11,9 +11,9 @@ import BDPointSDK
 import BrazeKit
 
 extension AppDelegate: BDPGeoTriggeringEventDelegate {
-    
-    func onZoneInfoUpdate(_ zoneInfos: Set<BDZoneInfo>) {
-        print("Zone information has been recieved")
+        
+    func didUpdateZoneInfo() {
+        print("Zone information has been received")
     }
     
     func didEnterZone(_ triggerEvent: GeoTriggerEvent) {
